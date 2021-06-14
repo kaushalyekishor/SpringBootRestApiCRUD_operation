@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url : jdbc:mysql://localhost:3306/employees?useSSL=false
+    username: root
+    password: root
+
+    hikari:
+      data-source-properties:
+        maximumPoolSize: 30
+        cachePrepStmts: true
+        prepStmtCacheSize: 100
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
